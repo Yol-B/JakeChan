@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+    <title>Search</title>
+
+</head>
+<style>
+    body{
+        background-image: url("https://image.freepik.com/free-photo/digital-technology-network-data-communication-concept-abstract-background-earth-element-furnished-by-nasa_24070-631.jpg");
+        background-image: no-repeat;
+        background-size: cover;
+
+   }
+
+   td {
+       background-color: white;
+   }
+</style>
+
+<body>
+    <br>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="form createForm">
+                <div class="card container">
+                    <h5 class="card-header mb-3 white-text text-center py-4"><strong>SEARCH A COUNTRY</strong></h5>
+                    <div class="form-group">
+                        <label class="bmd-label-static">Search</label>
+                        <input type="text" class="form-control" id="search" required="">
+                    </div>
+                    <center>
+                        <button id="btnSearch" class="btn btn-raised btn-info" >Search</button>
+                        <p>No result found..,</p>
+                    </center>
+
+                    <!-- <label class="bmd-label-static">Status</label>
+                        <input type="text" class="form-control" id="status"> -->
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+    <br><br>
+    <div class="row class-list">
+        <div class="container ">
+            <table class="table table-bordered ">
+                <thead class="bg-info">
+                    <tr class=" text-center">
+                        <th scope="col">
+                            <h6>Country</h6>
+                        </th>
+                        <th scope="col">
+                            <h6>Flag</h6>
+                        </th>
+                        <th scope="col">
+                            <h6>Code</h6>
+                        </th>
+                        <th scope="col">
+                            <h6>Population</h6>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    </div>
+    <script>
+
+            //emptyTableFunction
+            function emptyTable() {
+                $('tbody').empty();
+            }
+            //addRow
+            function addRow(name,flag,alpha3Code,population) {
+                $('tbody').append(
+                        "<tr><td>" + name + "</td><td><img style='height:20px' src=" + flag + "></td><td>" + alpha3Code + "</td><td>" + population + "</td></tr>"
+                    )
+            }
+
+
+
+
+   
+    </script>
+    <script src="controller.js"></script>
+</body>
+
+</html>
