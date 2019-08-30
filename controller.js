@@ -34,8 +34,14 @@ $(document).ready(function () {
         })
 
 
-        $.getJSON(url, function (data) {
-            $.each(data, function (key, val) {
+        $.ajax( {
+		url:url,
+		type:"get",
+		error:funtion(e){
+			alert("no result found")
+		},
+		success:funtion(data){
+		$.each(data, function (key, val) {
                 if (val.name.toLowerCase().substring(0, search.length) == search) {
                     $('tbody').append(
                         "<tr><td>" + val.name + "</td><td><img style='height:20px' src=" + val.flag + "></td><td>" + val.alpha3Code + "</td><td>" + val.population + "</td></tr>"
@@ -43,8 +49,8 @@ $(document).ready(function () {
                 }
 
             });
-
-        });
+		}
+      })
         emptyTable();
     })
 
