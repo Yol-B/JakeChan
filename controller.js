@@ -44,7 +44,7 @@ $(document).ready(function () {
 
             });
 
-        });
+        }).error(function() { alert("No results Found"); })
         emptyTable();
     })
 
